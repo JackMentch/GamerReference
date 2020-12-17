@@ -15,8 +15,6 @@ db = SQLAlchemy(app)
 
 directory = r'./Data'
 
-total_orgs = []
-
 class User(db.Model):
 
     id = db.Column(db.Integer, primary_key = True)
@@ -44,9 +42,6 @@ def csv_to_db():
                 csv_reader = csv.reader(current_season)
                 for line in csv_reader:
 
-                    # Generate the total list of orgs
-                    if line[1] not in total_orgs:
-                        total_orgs.append(line[1])
 
                     user = User(username = line[0], org = line[1], activision_id = line[2],
                                 cw_kd = round(float(line[3]),2), mw_kd = round(float(line[4]),2),
@@ -60,12 +55,37 @@ def csv_to_db():
 def filter(org):
     data =  User.query.filter_by(org=org)
 
+    total_orgs = []
+
+    total_orgs_query = User.query.with_entities(User.org).distinct()
+
+    for org in total_orgs_query:
+        org_fixed = str(org)
+        org_fixed = org_fixed.replace("'", "")
+        org_fixed = org_fixed.replace("(", "")
+        org_fixed = org_fixed.replace(")", "")
+        org_fixed = org_fixed.replace(",", "")
+        total_orgs.append(org_fixed)
+
     return render_template('index.html', org = org, data = data, total_orgs = total_orgs)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     data = User.query.all()
+
+    total_orgs = []
+
+    total_orgs_query = User.query.with_entities(User.org).distinct()
+
+    for org in total_orgs_query:
+        org_fixed = str(org)
+        org_fixed = org_fixed.replace("'","")
+        org_fixed = org_fixed.replace("(", "")
+        org_fixed = org_fixed.replace(")", "")
+        org_fixed = org_fixed.replace(",", "")
+        total_orgs.append(org_fixed)
+
 
     return render_template('index.html', data = data, total_orgs = total_orgs)
 
