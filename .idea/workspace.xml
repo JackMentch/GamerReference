@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11b6c701-0884-4b9d-b369-ec0afbaa7eba" name="Default Changelist" comment="Added app.py file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Data/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/site.db" afterDir="false" />
-    </list>
+    <list default="true" id="11b6c701-0884-4b9d-b369-ec0afbaa7eba" name="Default Changelist" comment="Added app.py file" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="149">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding>
                 <element signature="e#0#84#0" expanded="true" />
               </folding>
@@ -45,7 +41,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="180" />
+    <option name="x" value="170" />
     <option name="y" value="22" />
     <option name="width" value="983" />
     <option name="height" value="691" />
@@ -147,14 +143,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="199" y="22" width="983" height="691" extended-state="0" />
+    <frame x="170" y="22" width="983" height="691" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3128898" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3128898" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32888147" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32888147" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39899832" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -222,8 +219,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="149">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding>
             <element signature="e#0#84#0" expanded="true" />
           </folding>
