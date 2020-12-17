@@ -6,7 +6,7 @@ import time
 from threading import Thread
 from test import get_data
 
-app = Flask(__name__)
+application = app = Flask(__name__)
 app.secret_key = "NDU23JSC933JF3"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -68,6 +68,34 @@ def index():
     data = User.query.all()
 
     return render_template('index.html', data = data, total_orgs = total_orgs)
+
+@app.route('/millersmellsbad', methods=['GET', 'POST'])
+def miller():
+
+    class Friend():
+
+        org = "POO"
+        cw_kd = 0
+        mw_kd = 0
+        wz_kd = 0
+        wz_wins = 0
+
+        def __init__(self, name, username):
+            self.username = username
+            self.name = name
+
+    my_friends = {"Jack": "snowmanonfire99", "Mike": "Nincompoop#5584877", "Zach": "lil nut#1150495", "Alec": "Miller#5648187", "Cole": "Golden Eagle820"}
+    my_friends_list = []
+
+    for key, value in my_friends.items():
+        friend = Friend(key, value)
+        cw_kd, mw_kd, wz_kd, wz_wins = get_data(friend.username)
+        friend.cw_kd, friend.mw_kd, friend.wz_kd, friend.wz_wins = round(cw_kd, 2), round(mw_kd, 2), round(wz_kd, 2), wz_wins
+        my_friends_list.append(friend)
+
+
+    return render_template('millersmellsbad.html', my_friends_list = my_friends_list)
+
 
 @app.route('/about', methods=['GET'])
 def about():
