@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>GamerReference</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+  form {
+  text-align: center;
+  padding-bottom: 100px;
+}
+  .pointer {cursor: pointer;}
+  body {background-color: #d4ebfa;}
+  h1.a {
+  font-family: "Arial Black";
+  color: #203647;
+  text-align: center;
+  padding-top: 10px;
+  }
+
+  h4 {
+  font-family: "Arial Black";
+  color: #203647;
+  text-align: center;
+  padding-top: 0px;
+  }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #203647;
+}
+
+li {
+  float: left;
+  border-right: 1px solid white;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 24px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #dddddd;
+  text-decoration: none;
+  color: #203647;
+}
+</style>
+</head>
+
+<body>
+<ul>
+  <li><a href="/"><b>Home</b></a></li>
+  <li><a href="/about"><b>About</b></a></li>
+</ul>
+
+<h1 class="a">GamerReference.com</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <h4 class=flashes>
+    {% for message in messages %}
+      <h4>{{ message }}</h4>
+    {% endfor %}
+    </h4>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+
+<form action="#" method="post">
+  <p>Org: </p><input type="text" name="org_input" required></input><br><br>
+  <p>Username: </p><input type="text" name="username_input" required></input><br><br>
+  <p>Activision ID: </p><input type="text" name="activision_id_input" required></input><br><br>
+  <p>Input Code: </p><input type="text" name="input_code"></input><br><br>
+  <input type="submit" value="Add"></input>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<script>
+</script>
+
+</body>
+</html>
